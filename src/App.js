@@ -4,6 +4,7 @@ import Button from './components/Button.js'
 import Screen from './components/Screen.js';
 import ClearButton from './components/ClearButton.js';
 import { useState } from 'react';
+import { evaluate } from 'mathjs'
 
 
 function App() {
@@ -13,6 +14,14 @@ function App() {
   const addInput = value => {
     setInput(input + value);
   };
+
+  const calcResult = () => {
+    if (input) {
+      setInput(evaluate(input));
+    } else {
+      alert("Don't fool me, there's nothing to calculate")
+    }
+  }
 
   return (
     <div className="App">
@@ -71,7 +80,7 @@ function App() {
           <Button handleClick={addInput}>
             .
           </Button>
-          <Button handleClick={addInput}>
+          <Button handleClick={calcResult}>
             =
           </Button>
           <Button handleClick={addInput}>

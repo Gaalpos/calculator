@@ -2,7 +2,8 @@ import React from "react";
 import '../css/ClearButton.css'
 
 const ClearButton = (props) => (
-  <div className="clear-button" onClick={props.handleClear} >
+  <div className="clear-button"
+    onClick={props.handleClear} >
     {props.children}
   </div>
 
